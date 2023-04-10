@@ -1,4 +1,3 @@
-import bcgs from "./data/bcg.js";
 import buttons from "./data/buttons.js";
 console.log("Clicker");
 const refs = {
@@ -22,13 +21,14 @@ setNextLevelTarget();
 function countLevel() {
   level += 1;
   refs.levelValue.textContent = level;
-  const background = bcgs[level - 2];
-  console.log(background);
-  document.body.style.backgroundColor = background;
+  changeBcg(level)
   changeHero(level);
 }
 function changeBcg(n) {
-    const bck = bcgs[n - 1];
+    document.body.style.backgroundImage = `url('./images/backgrounds/sea_${n}.jpg')`;
+    if (n === 6) {
+    document.body.style.backgroundImage = "url('./images/backgrounds/sea_1.jpg')";
+  }
 }
 function changeHero(n) {
   const image = buttons[n - 1];
