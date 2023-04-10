@@ -50,7 +50,6 @@ function reset() {
 const increment = () => {
   total += 1;
   refs.counterValue.textContent = total;
-
   console.log("your target is", levelTarget);
 
   if (total === levelTarget) {
