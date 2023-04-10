@@ -1,11 +1,14 @@
-console.log('Clicker');
+import bcgs from "./data/bcg.js";
+import buttons from "./data/buttons.js";
+console.log("Clicker");
 const refs = {
   counterValue: document.querySelector("#value"),
   scoreValue: document.querySelector("#score"),
   levelValue: document.querySelector("#level"),
-  plusBtn: document.querySelector('[data-action="increment"]'),
+  plusBtn: document.querySelector("#increment"),
+  heroImg: document.getElementById("hero"),
 };
-
+console.log(refs.heroImg);
 let total = Number(refs.counterValue.textContent);
 let totalScore = Number(refs.scoreValue.textContent);
 let levelTarget;
@@ -19,13 +22,26 @@ setNextLevelTarget();
 function countLevel() {
   level += 1;
   refs.levelValue.textContent = level;
-//   console.log("level ", level);
+  const background = bcgs[level - 2];
+  console.log(background);
+  document.body.style.backgroundColor = background;
+  changeHero(level);
+}
+function changeBcg(n) {
+    const bck = bcgs[n - 1];
+}
+function changeHero(n) {
+  const image = buttons[n - 1];
+  refs.heroImg.src = `./images/${image}`;
+  if (n === 6) {
+    refs.heroImg.src = `./images/${buttons[0]}`;
+  }
 }
 function reset() {
   total = 0;
   totalScore = 0;
   level = 1;
-    
+
   refs.counterValue.textContent = total;
   refs.scoreValue.textContent = totalScore;
   refs.levelValue.textContent = level;
