@@ -12,15 +12,37 @@
     <main>
       <p>Level: <span id="level">1</span></p>
       <p>Score: <span id="score">0</span></p>
-      <button type="button" id="increment">
+      <button type="button" id="increment" class="button-hero">
         <img src="./images/snail.png" id="hero" alt="hero" width="200px" />
       </button>
       <span id="value">0</span>
+
+      <!-- Modal -->
+      <div class="container">
+        <h2 class="text-center">Login</h2>
+        <br>
+        <form action="/dashboard.html" class="loginForm">
+            <div class="input-group">
+                <label for="username" class="label">Username</label>
+                <input type="text" id="username" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <button class="button" type="submit">Login</button>
+        </form>
+    </div>
     </main>
     <footer>
       <p>TechFabric's Test task by Oksana Stets</p>
       <!-- <p>Image by <a href="https://www.freepik.com/free-vector/sea-background-video-conferencing_9590196.htm#&position=1&from_view=collections">Freepik</a></p> -->
     </footer>
     <script src="./index.js" type="module"></script>
+    <script src="./login.js" type="module"></script>
   </body>
 </html>

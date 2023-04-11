@@ -7,7 +7,7 @@ const refs = {
   plusBtn: document.querySelector("#increment"),
   heroImg: document.getElementById("hero"),
 };
-console.log(refs.heroImg);
+
 let total = Number(refs.counterValue.textContent);
 let totalScore = Number(refs.scoreValue.textContent);
 let levelTarget;

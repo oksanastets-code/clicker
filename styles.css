@@ -27,12 +27,12 @@ body {
     background-image: url(./images/backgrounds/sea_1.jpg);
     background-size: cover;
 }
-button {
+.button-hero {
     display: block;
     background-color: transparent;
     margin: 0 auto;
 }
-button{
+.button-hero{
   position: relative;
   border-radius: 50%;
   color: white;
@@ -45,11 +45,11 @@ button{
   -webkit-transition-duration: 0.4s; /* Safari */
 }
 
-button:hover {
+.button-hero:hover {
   transition-duration: 0.1s;
 }
 
-button:after {
+.button-hero:after {
   content: "";
   display: block;
   position: absolute;
@@ -63,7 +63,7 @@ button:after {
   box-shadow: 0 0 10px 40px white;
 }
 
-button:active:after {
+.button-hero:active:after {
   box-shadow: 0 0 0 0 white;
   position: absolute;
   border-radius: 50%;
@@ -73,6 +73,6 @@ button:active:after {
   transition: 0s;
 }
 
-button:active {
+.button-hero:active {
   top: 1px;
 }
