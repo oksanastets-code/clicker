@@ -18,25 +18,30 @@
       <span id="value">0</span>
 
       <!-- Modal -->
-      <div class="container">
-        <h2 class="text-center">Login</h2>
-        <br>
-        <form action="/dashboard.html" class="loginForm">
-            <div class="input-group">
+      <div class="lightbox js-lightbox is-open">
+        <div class="lightbox__overlay">
+          <div class="container lightbox__content">
+            <h2 class="text-center">Login</h2>
+            <br />
+            <form action="#" class="loginForm">
+              <div class="input-group">
                 <label for="username" class="label">Username</label>
-                <input type="text" id="username" class="input">
+                <input type="text" id="username" class="input" />
                 <span class="error-message"></span>
-            </div>
-            <br>
-            <div class="input-group">
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" class="input">
+              </div>
+              <br />
+              <div class="input-group">
+                <label for="email" class="label">E-mail</label>
+                <input type="text" id="email" class="input" />
                 <span class="error-message"></span>
-            </div>
-            <br>
-            <button class="button" type="submit">Login</button>
-        </form>
-    </div>
+              </div>
+              <br />
+              <button class="button" type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+        <!-- <button type="button" class="lightbox__button" data-action="close-form">X</button> -->
+      </div>
     </main>
     <footer>
       <p>TechFabric's Test task by Oksana Stets</p>
@@ -44,5 +49,6 @@
     </footer>
     <script src="./index.js" type="module"></script>
     <script src="./login.js" type="module"></script>
+    <script src="./modal.js" type="module"></script>
   </body>
 </html>
