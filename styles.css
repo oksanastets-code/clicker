@@ -3,6 +3,11 @@
 ::after {
   box-sizing: border-box;
 }
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
 body,
 button,
 ul,
@@ -22,11 +27,14 @@ img {
   margin: 0 auto;
 }
 body {
-    width: 1250px;
-    padding: 15px;
-    background-image: url(./images/backgrounds/sea_1.jpg);
-    background-size: cover;
+  width: 1250px;
+  padding: 0 15px;
+  margin: 0 auto;
+  background-image: url(./images/backgrounds/sea_1.jpg);
+  background-size: cover;
 }
+
+
 /* modal */
 .lightbox {
   /* display: flex;
@@ -54,25 +62,6 @@ body {
   height: 100vh;
   background-color: #78adab;
 }
-.lightbox__content label {
-  color:#fff;
-}
-.lightbox__content table {
-  position: absolute;
-  top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  color: #fff;
-}
-
-.note-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-}
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -83,88 +72,84 @@ body {
   padding: 0;
   overflow: hidden;
   pointer-events: none;
- 
 }
 
 .container {
-    max-width: 98vw;
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: #fff;
+  max-width: 98vw;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
+  margin-top: 15px;
 }
 
-
-    .container {
-        max-width: 460px;
-        margin: 3rem auto;
-        padding: 2rem;
-        border: 1px solid #ddd;
-        border-radius: 0.25rem;
-        background-color: #fff;
-    }
-
+.container {
+  max-width: 460px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  background-color: #fff;
+}
 
 .input {
-    appearance: none;
-    display: block;
-    width: 100%;
-    color: #333;
-    border: 1px solid rbg(180, 180, 180);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.25rem;
-   
+  appearance: none;
+  display: block;
+  width: 100%;
+  color: #333;
+  border: 1px solid rbg(180, 180, 180);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
 }
- .input.input-error {
-        border: 1px solid red;
-       
-    }
+.input.input-error {
+  border: 1px solid red;
+}
 .input.input-error:focus {
-            border: 1px solid red;
-        }
+  border: 1px solid red;
+}
 .input:focus {
-        outline: none;
-        border: 1px solid #78adab;
-        /* background-clip: padding-box; */
-    }
+  outline: none;
+  border: 1px solid #78adab;
+  /* background-clip: padding-box; */
+}
 .error-message {
-    font-size: 0.85rem;
-    color: red;
+  font-size: 0.85rem;
+  color: red;
 }
 
 .button {
-    background-color: #78adab;
-    padding: 1rem;
-    border: none;
-    color: #fff;
-    font-weight: bold;
-    display: block;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    font-size: 1rem;
-  }
+  background-color: #78adab;
+  padding: 1rem;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
 .button:hover {
-      filter: brightness(110%);
-  }
-  
+  filter: brightness(110%);
+}
+
 /* Button Hero */
 .button-hero {
-    display: block;
-    background-color: transparent;
-    margin: 0 auto;
+  display: block;
+  background-color: transparent;
+  margin: 0 auto;
 }
-.button-hero{
+.button-hero {
   position: relative;
   border-radius: 50%;
   color: white;
   padding: 2em;
-  cursor:pointer;
-  user-select:none;
+  cursor: pointer;
+  user-select: none;
   text-decoration: none;
   cursor: pointer;
   transition-duration: 0.4s;
@@ -181,7 +166,7 @@ body {
   position: absolute;
   border-radius: 50%;
   left: 0;
-  top:0;
+  top: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -194,11 +179,48 @@ body {
   position: absolute;
   border-radius: 50%;
   left: 0;
-  top:0;
+  top: 0;
   opacity: 1;
   transition: 0s;
 }
 
 .button-hero:active {
   top: 1px;
+}
+
+/* progress bar */
+.meter {
+  box-sizing: content-box;
+  height: 20px; /* Can be anything */
+  position: relative;
+  margin: 60px 0 20px 0; /* Just for demo spacing */
+  background: #78adab;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-image: linear-gradient(#f1a165, #f36d0a);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* footer */
+footer {
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: #78adab;
 }

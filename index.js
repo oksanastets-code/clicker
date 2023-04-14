@@ -6,6 +6,7 @@ const refs = {
   levelValue: document.querySelector("#level"),
   plusBtn: document.querySelector("#increment"),
   heroImg: document.getElementById("hero"),
+  progress: document.getElementById("progress"),
 };
 
 let total = Number(refs.counterValue.textContent);
@@ -21,13 +22,14 @@ setNextLevelTarget();
 function countLevel() {
   level += 1;
   refs.levelValue.textContent = level;
-  changeBcg(level)
+  changeBcg(level);
   changeHero(level);
 }
 function changeBcg(n) {
-    document.body.style.backgroundImage = `url('./images/backgrounds/sea_${n}.jpg')`;
-    if (n === 6) {
-    document.body.style.backgroundImage = "url('./images/backgrounds/sea_1.jpg')";
+  document.body.style.backgroundImage = `url('./images/backgrounds/sea_${n}.jpg')`;
+  if (n === 6) {
+    document.body.style.backgroundImage =
+      "url('./images/backgrounds/sea_1.jpg')";
   }
 }
 function changeHero(n) {
@@ -51,11 +53,12 @@ const increment = () => {
   total += 1;
   refs.counterValue.textContent = total;
   console.log("your target is", levelTarget);
-
+  progressBar(total, levelTarget);
   if (total === levelTarget) {
     setNextLevelTarget();
     countScore();
     countLevel();
+    progressBar(total, levelTarget);
   }
   if (level === 6) {
     reset();
@@ -70,3 +73,9 @@ const countScore = () => {
   total = 0;
   refs.counterValue.textContent = total;
 };
+
+function progressBar(m, n) {
+    let width = 100 - (m / n) * 100;
+    console.log(width);
+  refs.progress.style.width = `${width}%`;
+}

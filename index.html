@@ -8,15 +8,20 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header>Clicker Game</header>
+    <header>
+      <h1 class="text-center">Welcome to the Clicker Game!</h1>
+      <!-- <p><a href="#" id="exit'">Log Out</a></p> -->
+    </header>
     <main>
-      <p>Level: <span id="level">1</span></p>
-      <p>Score: <span id="score">0</span></p>
+      <p class="text-center">Level: <span id="level">1</span></p>
+      <p class="text-center">Total score: <span id="score">0</span></p>
       <button type="button" id="increment" class="button-hero">
         <img src="./images/snail.png" id="hero" alt="hero" width="200px" />
       </button>
-      <span id="value">0</span>
-
+      <p class="text-center">Level Score: <span id="value">0</span></p>
+      <div class="meter">
+        <span id="progress" style="width: 100%"></span>
+      </div>
       <!-- Modal -->
       <div class="lightbox js-lightbox is-open">
         <div class="lightbox__overlay">
@@ -49,6 +54,5 @@
     </footer>
     <script src="./index.js" type="module"></script>
     <script src="./login.js" type="module"></script>
-    <script src="./modal.js" type="module"></script>
   </body>
 </html>
